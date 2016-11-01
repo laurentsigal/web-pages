@@ -1,0 +1,21 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+</head>
+  <body>
+    <a id='open' href='https://land.bttn.io/button'>Open Uber</a>
+    <script>
+      document.getElementById('open').addEventListener('click', function() {
+        console.log('click');
+        $.ajax({
+          type: "POST",
+          url: 'https://4e7de4a7.ngrok.io/attribution/yo',
+          dataType: 'json',
+          async: true,
+          data: {hello:'world'},
+        });
+      }, true);
+    </script>
+  </body>
+</html>

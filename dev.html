@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://dl.dropboxusercontent.com/u/15078113/fb-style.css">
+
+<script>
+    config = {
+        appID:'454765777978473',
+        redirect:'http://board-game.dev:3000/facebook_redirect'
+    };
+
+    // Load FB SDK
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : config.appID,
+            xfbml      : false,
+            session    : true,
+            status     : true,
+            version    : 'v2.1'
+        });
+
+        FB.getLoginStatus(onLoginResponse);
+        FB.Canvas.setAutoGrow(false);
+    };
+
+    // Check if there is a custom link
+    var getURLParams = function() {
+        var prmstr = window.location.search.substr(1);
+        var prmarr = prmstr.split("&");
+        var params = {};
+
+        for ( var i = 0; i < prmarr.length; i++) {
+            var tmparr = prmarr[i].split("=");
+            if (tmparr[0] === 'boardpath') {
+                // Need to decode html
+                var find = '%2F';
+                var re = new RegExp(find, 'g');
+                tmparr[1] = tmparr[1].replace(re,'/');
+            }
+            params[tmparr[0]] = tmparr[1];
+        }
+        return params;
+    };
+
+    var onLoginResponse = function(response) {
+        var button = document.getElementById('login');
+        var params = getURLParams();
+        if (response.status == 'connected') {
+            var userID = response.authResponse.userID;
+            if (params.boardpath) {
+                button.innerHTML = 'Access your game';
+                button.href = config.redirect + '?fbID=' + userID + '&path=' + params.boardpath;
+            }
+            else {
+                button.innerHTML = 'Access your account';
+                button.href = config.redirect + '?fbID=' + userID;
+            }
+        }
+        else {
+            var onLogin = function(response) {
+                if (response.status == 'connected') {
+                    var userID = response.authResponse.userID;
+                    top.location.href = config.redirect + '?fbID=' + userID;
+                }
+            };
+
+            button.addEventListener('click', function() {
+                FB.login(onLogin, {scope:'email, user_friends'});
+                return false;
+            });
+        }
+    };
+</script>
+
+<div id="canvas">
+    <div id='title'>
+        <div id='name' class='inline-holder centered'>
+            <div>
+                <h1>Arms Race</h1>
+            </div>
+        </div>
+        <h3>Play Risk online with your friends and others!</h3>
+    </div>
+
+    <div id="page" style='text-align:center;'>
+        <a target='_blank' id='login' class='btn-lg btn btn-success btn-primary'>
+            Log in and get started!
+        </a>
+
+        <img src='https://dl.dropboxusercontent.com/u/15078113/map.png'>
+    </div>
+</div>

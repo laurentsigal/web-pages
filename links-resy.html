@@ -1,0 +1,49 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+  <body>
+    <div>
+      <a href="https://twitter.com/ArmsRaceCo/status/715303586716999680">Twitter promo</a>
+    </div>
+    <div>
+      <a href="https://www.youtube.com/watch?v=-3frA_rj918">Youtube</a>
+    </div>
+    <div data-bttnio-id="btn-5f46b39af391bf3f"
+         data-bttnio-context='{"subject_location":{"latitude":"40.738275","longitude":"-73.982285"},"user_local_time":"2016-05-02T14:26:23"}'></div>
+    <script>
+window.ButtonWebConfig = {
+  applicationId: 'app-6187c98d6bf0a24a',
+  enableLogging: true
+};
+(function(u,s,e,b,t,n){
+  u['__bttnio']=b;u[b]=u[b]||function(){(u[b].q=u[b].q||[]).push(arguments)};t=s.createElement(e);n=s.getElementsByTagName(e)[0];t.async=1;t.src='https://bttn-js-sdk-test.s3.amazonaws.com/bttnio.js';n.parentNode.insertBefore(t,n)
+})(window, document, 'script', 'bttnio');
+</script>
+  <script>
+    setTimeout(function() {
+      console.log(ButtonWebConfig);
+      var button = {
+        subject_location: {
+          latitude: '40.738275',
+          longitude: '-73.982285'
+        },
+        user_local_time: '2016-05-02T14:26:23'
+      };
+      console.log(JSON.stringify(button));
+
+      ButtonWebConfig.context = {
+        'btn-5f46b39af391bf3f': {
+          subject_location: {
+            latitude: '40.738275',
+            longitude: '-73.982285',
+            name: 'Button HQ'
+          },
+          user_local_time: '2016-05-02T14:26:23'
+        }
+      };
+      bttnio('refresh');
+    }, 1000);
+  </script>
+  </body>
+</html>

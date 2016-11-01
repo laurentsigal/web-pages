@@ -1,0 +1,32 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+</head>
+  <body>
+    <h1>This is the new interstitial</h1>
+
+    <a id='open' href='uber://?action=setPickup'>Open app</a>
+
+    <a id='install' href='https://itunes.apple.com/us/app/uber/id368677368?mt=8'>Install</a>
+
+    <div id='append'></div>
+    <script>
+      var debug = function(message) {
+        var node = document.createElement("div");
+        var textnode = document.createTextNode(message);
+        node.appendChild(textnode);
+        document.getElementById("append").appendChild(node);
+      }
+
+      document.addEventListener("visibilitychange", function() {
+        debug("visibility changed");
+      });
+
+      setInterval(function() {
+        var focus = document.hasFocus();
+        debug(focus ? "focus" : "no focus");
+    }, 1000);
+    </script>
+  </body>
+</html>

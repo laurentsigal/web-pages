@@ -72,21 +72,6 @@
     },
     "sessionOrgId": {
       "type": "string"
-    },
-    "and": {
-      "type": "array",
-      "items": {
-        "$ref": ""
-      }
-    },
-    "or": {
-      "type": "array",
-      "items": {
-        "$ref": ""
-      }
-    },
-    "not": {
-      "$ref": ""
     }
   },
   "additionalProperties": false,

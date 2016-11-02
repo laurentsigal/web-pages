@@ -1,5 +1,4 @@
 {
-  "id": "https://laurentsigal.github.io/web-pages/schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "properties": {
     "constant": {

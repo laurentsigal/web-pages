@@ -15,16 +15,13 @@
       right:0;
     }
 
-    body {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
     .scroll-container {
       display: block;
       height: 100%;
-      overflow-y: auto
+      overflow-y: auto;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     .height-fixer {
@@ -189,8 +186,8 @@ Continued use of GPS running in the background can dramatically decrease battery
   <meta name="twitter:image" content="http://is5.mzstatic.com/image/thumb/Purple71/v4/88/74/be/8874be5d-476e-2a65-64e4-c34f722fd0c4/mzl.tircnckz.png/512x512bb-85.jpg">
 </head>
 
-<body style='background_color: white; background-image: url("https://cdn.usebutton.com/button-links/images/hotels/background.png")' cz-shortcut-listen="true">
-<div class="scroll-container">
+<body cz-shortcut-listen="true">
+<div class="scroll-container" style='background_color: red; background-image: url("https://cdn.usebutton.com/button-links/images/hotels/background.png")'>
   <div style="position:relative">
     <div class="main">
       <div class="content">

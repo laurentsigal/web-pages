@@ -1,0 +1,82 @@
+html, body {
+  margin:0;
+  padding:0;
+  position:fixed;
+  bottom:0;
+  top:0;
+  left:0;
+  right:0;
+}
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.scroll-container {
+  display: block;
+  height: 100%;
+  overflow-y: auto
+}
+
+.height-fixer {
+  height:100%;
+  width:0;
+}
+
+div.main > div {
+  display:inline-block;
+  vertical-align: middle;
+}
+
+div.main {
+  display: block;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  text-align: center;
+  min-height:100%;
+}
+
+.content {
+  margin: auto;
+  width: 90%;
+  max-width: 400px;
+}
+
+#brand-placement {
+  width: 250px;
+  margin: auto;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#buttons-holder {
+  margin-top: 70px;
+}
+
+#buttons-holder > div {
+  width: 100%;
+}
+
+.button.custom {
+  width: 100%;
+  border-radius: 4px;
+  font-size: 1.3em;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+#enable {
+  position: absolute;
+  text-align: center;
+  padding: 15px;
+  top: 0;
+  width: 100%;
+  display: none;
+}
+
+.secondary-action {
+  font-size: 1.1em;
+  line-height: 40px;
+}

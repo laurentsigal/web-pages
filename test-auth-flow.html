@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test auth flow</title>
+</head>
+<body>
+<a id='success-flow' href='https://localhost:6000/v1/authorization/uber/process'>Start flow with success</a>
+<script>
+  document.getElementById('success-flow').addEventListener('click', function() {
+    setTimeout(function() {
+      window.location = "https://localhost:6000/v1/authorization/uber/complete?status=success";
+    }, 2000);
+  }, true);
+</script>
+</body>
+</html>

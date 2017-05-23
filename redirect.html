@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delayed redirect</title>
+  <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+</head>
+<body>
+<div>V2</div>
+<script>
+    $.get('https://get.uber.com');
+    setTimeout(function() {
+      window.location = "https://api.usebutton.com/v1/authorization/uber/start?thirdparty_id=lolo&btn_ref=srctok-327f9c90f6342997&organization=org-3eec44df0966f6f0";
+    }, 3000);
+</script>
+</body>
+</html>

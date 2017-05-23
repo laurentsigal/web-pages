@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will redirect you shortly</title>
+</head>
+<body>
+<div>Just you wait</div>
+<script>
+  setTimeout(function () {
+    var search = window.location.search;
+    window.location = './complete' + search;
+  }, 2000);
+</script>
+</body>
+</html>

@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Test auth flow</title>
+  <title>Delayed redirect</title>
 </head>
 <body>
-<a id='success-flow' href='https://localhost:6000/v1/authorization/uber/process'>Start flow with success</a>
+<a id='success-flow' href='http://localhost:6000/v1/authorization/uber/process'>Start flow with success</a>
 <script>
   document.getElementById('success-flow').addEventListener('click', function() {
+    console.log('yo');
     setTimeout(function() {
-      window.location = "https://localhost:6000/v1/authorization/uber/complete?status=success";
+      window.location = "http://localhost:6000/v1/authorization/uber/complete?status=success";
     }, 2000);
   }, true);
 </script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mparticle</title>
+  <script type="text/javascript">
+    (function (apiKey) {
+      window.mParticle = window.mParticle || {};
+      window.mParticle.config = window.mParticle.config || {};
+      window.mParticle.config.rq = [];
+      window.mParticle.ready = function (f) {
+        window.mParticle.config.rq.push(f);
+      };
+      var mp = document.createElement('script');
+      mp.type = 'text/javascript';
+      mp.async = true;
+      mp.src = ('https:' == document.location.protocol ? 'https://jssdkcdns' : 'http://jssdkcdn') + '.mparticle.com/js/v1/' + apiKey + '/mparticle.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(mp, s);
+    })('a5df99eed8f95f4e85fede5c2e2d58a2');
+  </script>
+</head>
+<body>
+</body>
+</html>
